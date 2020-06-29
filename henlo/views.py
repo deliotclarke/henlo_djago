@@ -8,7 +8,15 @@ from django.shortcuts import render
 
 
 def home(request):
-    return HttpResponse("Oh henlo, Django!")
+    return render(request, "henlo/home.html")
+
+
+def about(request):
+    return render(request, "henlo/about.html")
+
+
+def contact(request):
+    return render(request, "henlo/contact.html")
 
 
 def henlo_there(request, name):

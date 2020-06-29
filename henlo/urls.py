@@ -3,5 +3,7 @@ from henlo import views
 
 urlpatterns = [
     path("", views.home, name="home"),
-    path("henlo/<name>", views.henlo_there, name="henlo_there")
+    path("henlo/<name>", views.henlo_there, name="henlo_there"),
+    path("about/", views.about, name="about"),
+    path("contact/", views.contact, name="contact"),
 ]
