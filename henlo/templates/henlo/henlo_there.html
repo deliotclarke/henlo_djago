@@ -3,10 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <title>Hello, Django</title>
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'henlo/site.css' %}"
+    />
   </head>
 
-  <body>
-    <strong>Hello there, {{ name }}!</strong> It's {{ date | date:"l, d F, Y" }}
-    at {{ date | time:"H:i:s" }}
-  </body>
+  <span class="message">Henlo there, {{ name }}!</span>
+  It's {{ date | date:'l, d F, Y' }} at {{ date | time:'H:i:s' }}.
 </html>
