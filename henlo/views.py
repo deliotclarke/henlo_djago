@@ -1,11 +1,13 @@
-import re
+"""
+All major functions in project_henlo
+"""
+
 from datetime import datetime
-from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import redirect
+from django.views.generic import ListView
 from henlo.forms import LogMessageForm
 from henlo.models import LogMessage
-from django.views.generic import ListView
 
 # Create your views here.
 
@@ -20,14 +22,17 @@ class HomeListView(ListView):
 
 
 def about(request):
+    """renders about page on request"""
     return render(request, "henlo/about.html")
 
 
 def contact(request):
+    """renders contact page on request"""
     return render(request, "henlo/contact.html")
 
 
 def henlo_there(request, name):
+    """renders henlo there page with name placed in url and timestamp of instantiation"""
     return render(
         request,
         'henlo/henlo_there.html',
@@ -39,6 +44,7 @@ def henlo_there(request, name):
 
 
 def log_message(request):
+    """function posting log message model after user creation and redirecting user to home to view log messages"""
     form = LogMessageForm(request.POST or None)
 
     if request.method == "POST":

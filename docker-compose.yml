@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  henlodjango:
+    image: henlodjango
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000
